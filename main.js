@@ -141,7 +141,7 @@ function drawBlackHole() {
 
 // Dibujar el cuadrado para el texto en la esquina superior derecha
     ctx.beginPath();
-    ctx.globalAlpha = 1;
+    ctx.globalAlpha = 0.9;
     ctx.fillStyle = "white"; 
     ctx.fillRect(canvas.width - 200 - 30, 20, 200, 50);  
 
@@ -154,10 +154,10 @@ function drawBlackHole() {
 // Eventos para cambiar el radio de la sombra del black hole con las teclas a y s. a aumenta el radio y s lo disminuye y s lo disminuye
 document.addEventListener("keydown", (event) => {
    if (event.key === "s" || event.key === "S") {
-        shadowBlurValue = Math.min(shadowBlurValue + 20, 200);
+        shadowBlurValue = Math.min(shadowBlurValue + 5, 200);
         drawBlackHole();
     } else if (event.key === "a" || event.key === "A") {
-        shadowBlurValue = Math.max(shadowBlurValue - 20, 10);
+        shadowBlurValue = Math.max(shadowBlurValue - 5, 10);
         drawBlackHole();
     }
     
